@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "skills-toolkit",
+  "owner": {
+    "name": "Hiro"
+  },
+  "description": "A small toolkit of two Claude skills for building and querying a skills-guide.yaml knowledge base: skills-auditor (generate/update/validate the guide) and skill-selector (route prompts to the right skills using the guide).",
+  "plugins": [
+    {
+      "name": "skills-auditor",
+      "source": "./skills-auditor",
+      "skills": ["./"],
+      "description": "Create, maintain, and validate a skills-guide.yaml knowledge base that maps installed skills to categories and tasks.",
+      "strict": false
+    },
+    {
+      "name": "skill-selector",
+      "source": "./skills-selector",
+      "skills": ["./"],
+      "description": "Break down a prompt into ordered tasks and assign the best-fit skills, using skills-guide.yaml as the source of truth when present.",
+      "strict": false
+    }
+  ]
+}
